@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&family=Lobster&family=Oswald:wght@200&display=swap');
+main {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: row;
+    background-color: lightgray;
+    border: 2px solid rgb(213, 154, 43);
+    padding: 50px;
+    margin: 20px;
+    max-width: 70%;
+    border-radius: 5pt;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    font-family: 'Oswald', sans-serif;
+  }
+  
+  .text > h3 {
+    position: sticky;
+    line-height: var(--font-lineheight-1);
+    color: goldenrod;
+    font-family: 'Lobster', cursive;
+    background-color: brown;
+    background-size: 100pt ;
+    background-image: -moz-element();
+  }
+  
+  body {
+    display: grid;
+    place-content: center;
+  }
+
+  .button:link, .button:visited {
+    background-color: white;
+    color: rgb(213, 154, 43);
+    border: 2px solid rgb(213, 154, 43);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10pt;
+    margin-top: 10pt;
+  }
+  
+  .button:hover, .button:active {
+    background-color: rgb(213, 154, 43);
+    color: white;
+  }
+  .b{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Fira Sans', sans-serif;
+  }
+  .im{
+    display: inline-flex;
+    margin-top: 50px;
+    border-radius: 5pt;
+  }
+  hr.line{
+    border: 1px solid rgb(213, 154, 43);
+    display: inline-block;
+    width: 300px;
+  }
