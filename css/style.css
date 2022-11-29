@@ -1,0 +1,340 @@
+/* card style */
+/* use font from assets folder */
+
+:root {
+  /* COLORS */
+  --neutral-dk: #111;
+  --neutral-lt: #fff;
+  --primary: #620c2b;
+  
+
+
+  /* OTHER */
+  --transition: all 300ms ease-in-out;
+}
+.card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  margin: 16px;
+  width: 300px;
+  display: inline-block;
+  vertical-align: top;
+}
+/* body style that centers everything in it */
+body {
+  background-color: #f1f1f1;
+  text-align: center;
+  min-height: 100vh;
+}
+/* header css hide it when we scroll vertically */
+
+/* hide header when scroll */
+header.hide {
+  transform: translateY(-100%);
+}
+.textCtr {
+  text-align: center;
+}
+#carousel {
+    max-width: 75%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    position: relative;
+}  
+.slide-indicators {
+    display: flex;
+    justify-content: center;
+}
+.slide-indicator {
+    height: 44px;
+    width: 30px;
+    display: flex;
+    justify-items: center;
+    cursor: pointer;
+}
+.slide-indicator:after {
+    content: "";
+    background-color: #cd356d;
+    height: 10px;
+    margin-top: 10px;
+    width: 20px;
+    border-radius: 30px;
+}
+.slide-indicator.active:after,
+.slide-indicator:hover:after {
+    background-color: #620c2b;
+}
+.slide-banner {
+    background-color: #000000;
+    color: #ffffff;
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    padding: 15px;
+    font-size: 2.5vw;
+}
+.slide-banner a {
+    color: #ffffff;
+}
+#slide-container {
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 10px;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+.slide {
+    scroll-snap-align: center;
+    position: relative;
+    min-width: 100%;
+    padding-top: 50%;
+}
+.slide img {
+    height: 150%;
+    width: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.arrow {
+    color: #ffffff;
+    height: 20px;
+    width: 20px;
+    background-color: #000000;
+    position: absolute;
+    padding: 10px;
+    opacity: .3;
+    cursor: pointer;
+}
+.arrow.back {
+    left: 10px;
+    top: 10px;
+}
+.arrow.forward {
+    right: 10px;
+    top: 10px;
+}
+.arrow:hover {
+    opacity: 1;
+}
+
+/* large screen css */
+@media only screen and (min-width: 1200px) {
+  .card {
+    width: 300px;
+  }
+  .phone{
+    display: none;
+}
+.largeNavbar{
+    /* center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* change font */
+    font-family: 'Karla', sans-serif;
+    font-weight: 800;
+    font-size: smaller;
+}
+/* items inside largenavbar uppercase */
+.largeNavbar a{
+    text-transform: uppercase;
+    color: var();
+    text-decoration: none;
+    padding: 0 5px;
+}
+/* footer style which has line between items */
+footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: 'Karla', sans-serif;
+    font-weight: 800;
+    font-size: smaller;
+}
+header {
+  width: 100%;
+  height: 100px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+/* address margin */
+
+
+
+
+
+
+/* select address tag and give it margin */
+
+
+/* use grid to place cards  */
+.cardBody{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 50px;
+    margin: auto;
+    max-width: 80%;
+}
+
+
+}
+
+
+/* mobile css */
+@media only screen and (max-width: 1200px) {
+  .card {
+    width: 100%;
+    height: 100%; 
+  }
+  /* header that is button menu */
+ .largeNavbar{
+    display: none;
+ }
+  a {
+    text-decoration: none;
+    color: #1E1E23;
+    opacity:1;
+    font-family: 'work sans', sans serif;
+    font-size: 1.5em;
+    font-weight: 400;
+    transition: 200ms;
+  }
+  a:hover {
+    opacity:0.5;
+  }
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .cardBody{
+    margin-top: 80px;
+  }
+
+  .phone {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .content {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  nav {
+    background-color: #f1f1f2;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 5%;
+  }
+  
+ 
+  #menuToggle {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 25px;
+    left: 25px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  
+  #menuToggle input
+  {
+    display: flex;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+  }
+  
+  #menuToggle span
+  {
+    display: flex;
+    width: 29px;
+    height: 2px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #000;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 5px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+  }
+  
+  #menuToggle span:first-child
+  {
+    transform-origin: 0% 0%;
+  }
+  
+  #menuToggle span:nth-last-child(2)
+  {
+    transform-origin: 0% 100%;
+  }
+  
+  #menuToggle input:checked ~ span
+  {
+    opacity: 1;
+    transform: rotate(45deg) translate(-3px, -1px);
+    background: #36383F;
+  }
+  #menuToggle input:checked ~ span:nth-last-child(3)
+  {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+  
+  #menuToggle input:checked ~ span:nth-last-child(2)
+  {
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+  
+  #menu
+  {
+    position: absolute;
+    width: 180px;
+    height: 140vh;
+    box-shadow: 0 0 10px #85888C;
+    margin: -50px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    background-color: #F5F6FA;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  }
+  
+  #menu li
+  {
+    padding: 10px 0;
+    transition-delay: 2s;
+  }
+  
+  #menuToggle input:checked ~ ul
+  {
+    transform: none;
+  }
+    
+}
