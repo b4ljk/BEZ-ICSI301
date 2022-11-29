@@ -13,6 +13,14 @@
 		<!-- import css -->
 		<link rel="stylesheet" href="./css/style.css" />
 		<!-- javascript -->
+		<script>
+			$(function () {
+				$(".scroll-down").click(function () {
+					$("html, body").animate({ scrollTop: $("section.ok").offset().top }, "slow");
+					return false;
+				});
+			});
+		</script>
 	</head>
 
 	<body>
@@ -62,7 +70,9 @@
 			alt="..."
 		/>
 
-		<div class="cardBody">
+		<a href="#cardBodyId" class="scroll-down" address="true"></a>
+
+		<div class="cardBody" id="cardBodyId">
 			<!-- production card -->
 			<a href="categoryItem.html">
 				<div class="card" style="width: 18rem">
