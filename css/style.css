@@ -1,5 +1,6 @@
 /* card style */
 /* use font from assets folder */
+@import url(https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;700&display=swap);
 
 :root {
   /* COLORS */
@@ -7,11 +8,133 @@
   --neutral-lt: #fff;
   --primary: #620c2b;
   
+  
 
 
   /* OTHER */
   --transition: all 300ms ease-in-out;
 }
+
+*{
+  margin: 0;
+  font-family: Prompt,sans-serif;
+  padding: 0;
+}
+footer { 
+  font-family: Prompt,sans-serif;
+  
+}
+
+:root {
+    --background: #e9eef2;
+    --color: #212325;
+    --color-2: #444;
+    --color-3: #666;
+    --transition: all 0.25s ease 0s
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth
+}
+
+
+
+body {
+    background: var(--background)
+}
+
+.container {
+    max-width: 1210px;
+    margin: 0 auto;
+    position: relative;
+    padding: 2rem;
+}
+
+.copyright {
+  padding: 2rem 0 0 0;
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--color-3);
+  text-align: center;
+  border-top: 1px solid var(--color-3);
+}
+
+.footer-nav{
+    padding: 1rem 0
+}
+
+.footer-nav .col {
+  max-width: 300px;
+}
+
+p.site-decription {
+  color: var(--color-3);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.social-medias a {
+  color: var(--color-2);
+  width: 3rem;
+  height: 3em;
+  border: 2px solid var(--color-2);
+  border-radius: 50%;
+}
+
+.social-medias svg {
+  vertical-align: middle;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-start{
+  align-items: flex-start;
+}
+
+.flex-jc-start{
+  justify-content: flex-start;
+}
+
+.flex-around{
+  justify-content: space-around;
+}
+
+.flex-column{
+  flex-direction: column;
+}
+
+.flex-g-1{
+  gap: 1rem;
+}
+
+.col{
+  flex: 1;
+}
+
+.col-list ul li{
+  list-style: none;
+}
+
+.col-list ul li a{
+  text-decoration: none;
+  color: var(--color-3);
+  transition: var(--transition)
+}
+
+.col-list ul li a:hover,
+.col-list ul li a:focus{
+  color: var(--color);
+  text-decoration: underline
+}
+
+
 .card {
   background-color: #fff;
   border-radius: 5px;
@@ -21,11 +144,19 @@
   width: 300px;
   display: inline-block;
   vertical-align: top;
+  text-align: center;
+  /* card scale up on hover */
+
+}
+.card:hover {
+  transform: scale(1.05);
+  transition: var(--transition);
 }
 /* body style that centers everything in it */
 body {
+  margin: 0;
   background-color: #f1f1f1;
-  text-align: center;
+  /* text-align: center; */
   min-height: 100vh;
 }
 /* header css hide it when we scroll vertically */
@@ -125,7 +256,7 @@ header.hide {
     opacity: 1;
 }
 
-/* large screen css */
+/*! large screen css -----------------------------------------> */
 @media only screen and (min-width: 1200px) {
   .card {
     width: 300px;
@@ -139,7 +270,8 @@ header.hide {
     justify-content: center;
     align-items: center;
     /* change font */
-    font-family: 'Karla', sans-serif;
+    font-family: Prompt,sans-serif;
+
     font-weight: 800;
     font-size: smaller;
 }
@@ -147,35 +279,33 @@ header.hide {
 .largeNavbar a{
     text-transform: uppercase;
     color: var();
-    text-decoration: none;
+    font-family: Prompt,sans-serif;
     padding: 0 5px;
+    transition: var(--transition);
+    
 }
-/* footer style which has line between items */
-footer{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    font-family: 'Karla', sans-serif;
-    font-weight: 800;
-    font-size: smaller;
-}
+
+a { color:black } /* Globally */
+
+
+
+
 header {
   width: 100%;
-  height: 100px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  height: 90px;
+  background-color: transparent;
+  /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); */
+
   z-index: 100;
+  /* background color */
+
 }
 
-/* address margin */
 
-
-
-
-
-
-/* select address tag and give it margin */
-
+header a:visited { text-decoration: none; color:var(--primary); }
+header a:hover { text-decoration: none; color:blue; }
+header a:focus { text-decoration: none; color:yellow; }
+header a:hover, a:active { text-decoration: none; color:black }
 
 /* use grid to place cards  */
 .cardBody{
@@ -187,14 +317,93 @@ header {
     margin-top: 50px;
     margin: auto;
     max-width: 80%;
+    
 }
 
 
+.scroll-down {
+  opacity: 1;
+  -webkit-transition: all .5s ease-in 3s;
+  transition: all .5s ease-in 3s;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -16px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #FFF;
+  background-size: 14px auto;
+  border-radius: 50%;
+  z-index: 2;
+  -webkit-animation: bounce 2s infinite 2s;
+  animation: bounce 2s infinite 2s;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.scroll-down:before {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 6px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: "";
+    border: 2px solid white;
+    border-width: 0px 0 2px 2px;
+}
+
+@keyframes bounce {
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  60% {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
 }
 
 
-/* mobile css */
+/*! mobile css --------------------------------------------------> */
 @media only screen and (max-width: 1200px) {
+  .scroll-down{
+    display: none;
+  }
+  .banner-img{
+    display: none;
+  }
+  .cardBody{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    align-items: center;
+    margin: auto;
+  }
+  .footer-nav{
+    flex-direction: column
+  }
+  footer h3{
+    display: none;
+  }
   .card {
     width: 100%;
     height: 100%; 
@@ -203,7 +412,7 @@ header {
  .largeNavbar{
     display: none;
  }
-  a {
+  /* a {
     text-decoration: none;
     color: #1E1E23;
     opacity:1;
@@ -214,28 +423,28 @@ header {
   }
   a:hover {
     opacity:0.5;
-  }
-  ul {
+  } */
+  header ul {
     padding: 0;
     list-style-type: none;
+    text-transform: uppercase;
+    font-family: 'work sans', sans serif;
+  }
+  header a{
+    text-decoration: none;
+    color: #1E1E23;
+    opacity:1;
+    font-family: Prompt,sans-serif;
+    font-size: 1.2em;
+    font-weight: 400;
+    transition: 200ms;
   }
   
-  .cardBody{
-    margin-top: 80px;
-  }
+  
+  /* .cardBody{
+    margin: auto;
+  } */
 
-  .phone {
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  .content {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
   nav {
     background-color: #f1f1f2;
     height: 65px;

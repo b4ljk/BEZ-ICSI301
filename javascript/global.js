@@ -1,3 +1,5 @@
+//? Carousel javascript
+
 function autoplayCarousel() {
 	const carouselEl = document.getElementById("carousel");
 	const slideContainerEl = carouselEl.querySelector("#slide-container");
@@ -64,3 +66,6 @@ function autoplayCarousel() {
 	});
 }
 autoplayCarousel();
+
+// Path: javascript/global.js
+//? Scroll to top button
