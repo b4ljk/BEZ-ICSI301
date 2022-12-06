@@ -234,27 +234,6 @@ header.hide {
     top: 0;
     left: 0;
 }
-.arrow {
-    color: #ffffff;
-    height: 20px;
-    width: 20px;
-    background-color: #000000;
-    position: absolute;
-    padding: 10px;
-    opacity: .3;
-    cursor: pointer;
-}
-.arrow.back {
-    left: 10px;
-    top: 10px;
-}
-.arrow.forward {
-    right: 10px;
-    top: 10px;
-}
-.arrow:hover {
-    opacity: 1;
-}
 
 /*! large screen css -----------------------------------------> */
 @media only screen and (min-width: 1200px) {
