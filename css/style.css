@@ -140,7 +140,8 @@ p.site-decription {
   border-radius: 5px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   padding: 16px;
-  margin: 16px;
+  /* margin: 16px; */
+  margin-top: 5px;
   width: 300px;
   display: inline-block;
   vertical-align: top;
@@ -305,7 +306,7 @@ header {
 header a:visited { text-decoration: none; color:var(--primary); }
 header a:hover { text-decoration: none; color:blue; }
 header a:focus { text-decoration: none; color:yellow; }
-header a:hover, a:active { text-decoration: none; color:black }
+header a:hover, a:active { text-decoration: none; color:green }
 
 /* use grid to place cards  */
 .cardBody{
@@ -314,8 +315,9 @@ header a:hover, a:active { text-decoration: none; color:black }
     grid-gap: 10px;
     justify-items: center;
     align-items: center;
-    margin-top: 50px;
     margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
     max-width: 80%;
     
 }
