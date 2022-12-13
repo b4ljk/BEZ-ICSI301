@@ -142,6 +142,9 @@ p.site-decription {
   /* card scale up on hover */
 
 }
+.card-text{
+  color: black;
+}
 .card:hover {
   transform: scale(1.05);
   transition: var(--transition);
