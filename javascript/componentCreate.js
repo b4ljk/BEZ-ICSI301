@@ -43,6 +43,7 @@ function App(data, targetElement) {
 }
 
 window.onload = () => {
+	console.log("window.onload");
 	const queryString = window.location.search;
 	const urlParams = new URLSearchParams(queryString);
 	const type = urlParams.get("type");
