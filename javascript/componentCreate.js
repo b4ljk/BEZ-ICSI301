@@ -1,3 +1,4 @@
+import { get, Data } from "./jsonbin.js";
 function ChangeUndsenUngu() {
 	const myStyle = getComputedStyle(document.body);
 	const unguUndsen = myStyle.getPropertyValue("--ungu-undsen");
@@ -41,36 +42,30 @@ function App(data, targetElement) {
 	document.getElementById(targetElement).insertAdjacentHTML("beforeend", retVal);
 }
 
-const Data = [
-	{
-		title: "Cloud cake",
-		content: "Monbakery is a bakery that sells the best cakes and pastries in town.",
-		image: "https://www.tljus.com/wp-content/uploads/2022/07/Web_PDP_ChocoCloudCake.png",
-	},
-	{
-		title: "Orange cake",
-		content: "Monbakery is a bakery that sells the best cakes and pastries in town.",
-		image: "https://www.tljus.com/wp-content/uploads/2022/06/Web_PDP_OrangeCreamCake.png",
-	},
-	{
-		title: "Amogus cake",
-		content: "Monbakery is a bakery that sells the best cakes and pastries in town.",
-		image: "https://www.tljus.com/wp-content/uploads/2022/03/AmongUsImpostor.jpg",
-	},
-	{
-		title: "Mango",
-		content: "Monbakery is a bakery that sells the best cakes and pastries in town.",
-		image: "https://www.tljus.com/wp-content/uploads/2021/06/Mango3.jpg",
-	},
-	{
-		title: "Green honey melon",
-		content: "Monbakery is a bakery that sells the best cakes and pastries in town.",
-		image: "https://www.tljus.com/wp-content/uploads/2022/06/Web_PDP_HoneydewMelonSoft.png",
-	},
-	{
-		title: "Chip scone",
-		content: "Monbakery is a bakery that sells the best cakes and pastries in town.",
-		image: "https://www.tljus.com/wp-content/uploads/2022/07/Web_PDP_ChocoChip.png",
-	},
-];
-window.onload = () => App(Data, "cardBodyId");
+window.onload = () => {
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+	const type = urlParams.get("type");
+	console.log(type);
+	if (type == "cake") {
+		get("https://api.jsonbin.io/v3/b/63a051ee15ab31599e201a20").then((data) => {
+			if (data) {
+				App(data?.record?.[type], "cardBodyId");
+			}
+		});
+	} else if (type == "bakery") {
+		get("https://api.jsonbin.io/v3/b/63a05ab5dfc68e59d56c1ba9").then((data) => {
+			if (data) {
+				App(data?.record?.[type], "cardBodyId");
+			}
+		});
+	} else if (type == "drinks") {
+		get("https://api.jsonbin.io/v3/b/63a059f0dfc68e59d56c1b13").then((data) => {
+			if (data) {
+				App(data?.record?.[type], "cardBodyId");
+			}
+		});
+	} else {
+		App(Data, "cardBodyId");
+	}
+};
