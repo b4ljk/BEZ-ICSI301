@@ -1,7 +1,7 @@
 const header = `<div class="header">
 <div class="largeNavbar">
     <a href="index.html"
-        ><img src="./assets/logohorizontal.png" height="90" style="margin-right: 20px" alt="logo"
+        ><img src="./assets/logohorizontal.png" height="90" width="120" style="margin-right: 20px" alt="logo"
     /></a>
     <nav>
         <a href="about.html"><h2 class="headerAClass">About us</h2></a>
@@ -33,7 +33,7 @@ const header = `<div class="header">
                 <li><a href="category.html">Түргэн зууш</a></li>
             </ul>
         </div>
-        <img src="./assets/logohorizontal.png" height="70" alt="logo" />
+        <img src="./assets/logohorizontal.png" height="70" width="100" alt="logo" />
     </nav>
 </div>
 </div>`;

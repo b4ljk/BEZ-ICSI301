@@ -17,7 +17,7 @@ class MyArticle {
 		return `<a href="categoryItem.html">
         <div class="card" style="width: 18rem">
             <img
-                style="height: 23vh; width: auto"
+                style="height: 25vh; width: 80%"
                 src="${this.image}"
                 class="card-img-top"
                 alt="..."
