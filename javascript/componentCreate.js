@@ -15,19 +15,19 @@ class MyArticle {
 
 	render() {
 		return `<a href="categoryItem.html">
-        <div class="card" style="width: 18rem">
-            <img
-                style="height: 25vh; width: 80%"
-                src="${this.image}"
-                class="card-img-top"
-                alt="..."
-            />
-            <div class="card-body">
-                <h2 class="card-title" style="color: #620c2b">${this.title}</h2>
-                <p class="card-text">${this.content}</p>
-            </div>
-        </div>
-    </a>`;
+		<div class="card" style="width: 18rem">
+			<img style="height: 25vh; width: 80%" src="${this.image}" class="card-img-top" alt="..." />
+			<div class="card-body">
+				<h2 class="card-title" style="color: #620c2b">${this.title}</h2>
+				<p class="card-text">${this.content}</p>
+				<div onclick="window.location='http://google.com';return false" class="card-div-button">
+					<div>
+						<p style="color: white">Add to cart</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</a>`;
 	}
 }
 

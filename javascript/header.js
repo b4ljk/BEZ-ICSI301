@@ -3,7 +3,7 @@ const header = `<div class="header">
     <a href="index.html"
         ><img src="./assets/logohorizontal.png" height="90" width="120" style="margin-right: 20px" alt="logo"
     /></a>
-    <nav>
+    <nav style="display:flex;justify-content:center;align-items:center">
         <a href="about.html"><h2 class="headerAClass">About us</h2></a>
         <a href="category.html?type=cake"><h2 class="headerAClass">Cake</h2></a>
         <a href="category.html?type=bakery"><h2 class="headerAClass">Bakery</h2></a>
@@ -11,6 +11,8 @@ const header = `<div class="header">
         <a href="category.html?type=desert"><h2 class="headerAClass">Desert</h2></a>
         <a href="category.html?type=catering"><h2 class="headerAClass">Catering</h2></a>
         <a href="category.html?type=drinks"><h2 class="headerAClass">Drinks</h2></a>
+        <img style="margin-left:100px" src="./assets/cart.svg" height="40" width="40" alt="cart" />
+        <div style="background-color:red;border-radius:69px;height:20px;width:20px;display:flex;justify-content:center;align-items:center;margin-left:-15px;margin-top:25px"><p style="color:white">5</p></div>
     </nav>
 </div>
 </div>

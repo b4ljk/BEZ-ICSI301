@@ -257,6 +257,22 @@ header.hide {
 .arrow:hover {
     opacity: 1;
 }
+.card-div-button{
+  display: flex;
+								background-color: #620c2b;
+								padding: 10px;
+								border-radius: 8px;
+								justify-content: center;
+								cursor: pointer;
+                margin-top: 12px;
+              
+
+}
+/* card-div-button hover */
+.card-div-button:hover{
+  background-color: #cd356d;
+}
+
 
 /*! large screen css -----------------------------------------> */
 @media only screen and (min-width: 1200px) {
