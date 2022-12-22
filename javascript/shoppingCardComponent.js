@@ -45,7 +45,6 @@ class shoppingCart extends HTMLElement {
 			// add products to local storage
 			console.log("beforeunload");
 			localStorage.setItem("products", JSON.stringify(this.products));
-			localStorage.setItem("gay", JSON.stringify(this.products));
 		});
 	}
 	disconnectedCallback() {
