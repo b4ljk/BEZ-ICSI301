@@ -259,14 +259,12 @@ header.hide {
 }
 .card-div-button{
   display: flex;
-								background-color: #620c2b;
-								padding: 10px;
-								border-radius: 8px;
-								justify-content: center;
-								cursor: pointer;
-                margin-top: 12px;
-              
-
+  background-color: #620c2b;
+  padding: 10px;
+  border-radius: 8px;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 12px;
 }
 /* card-div-button hover */
 .card-div-button:hover{

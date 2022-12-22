@@ -1,3 +1,4 @@
+import "./shoppingCardComponent.js";
 const header = `<div class="header">
 <div class="largeNavbar">
     <a href="index.html"
@@ -11,8 +12,8 @@ const header = `<div class="header">
         <a href="category.html?type=desert"><h2 class="headerAClass">Desert</h2></a>
         <a href="category.html?type=catering"><h2 class="headerAClass">Catering</h2></a>
         <a href="category.html?type=drinks"><h2 class="headerAClass">Drinks</h2></a>
-        <img style="margin-left:100px" src="./assets/cart.svg" height="40" width="40" alt="cart" />
-        <div style="background-color:red;border-radius:69px;height:20px;width:20px;display:flex;justify-content:center;align-items:center;margin-left:-15px;margin-top:25px"><p style="color:white">5</p></div>
+        
+		<cart-component></cart-component>
     </nav>
 </div>
 </div>
