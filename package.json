@@ -1,0 +1,22 @@
+{
+  "name": "webproject",
+  "version": "1.0.0",
+  "description": "## terminal дээрээс",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b4ljk/BEZ-ICSI301.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/b4ljk/BEZ-ICSI301/issues"
+  },
+  "homepage": "https://github.com/b4ljk/BEZ-ICSI301#readme",
+  "dependencies": {
+    "firebase": "^9.15.0"
+  }
+}
