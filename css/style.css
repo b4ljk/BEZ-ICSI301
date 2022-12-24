@@ -270,6 +270,16 @@ header.hide {
 .card-div-button:hover{
   background-color: #cd356d;
 }
+.cart-img{
+  /* pointer */
+  cursor: pointer;
+}
+.cart-img:hover{
+  transform: scale(1.1);
+  transition: var(--transition);
+  
+
+}
 
 
 /*! large screen css -----------------------------------------> */

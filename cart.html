@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- Path: contact.html -->
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="UTF-8" />
+		<meta name="description" content="Monbakery is a bakery that sells the best cakes and pastries in town." />
+		<meta name="keywords" content="bakery, cakes, pastries, monbakery" />
+		<meta name="theme-color" content="#ffffff" />
+		<title>Monbakery | Category</title>
+		<title>Payment</title>
+		<script src="./javascript/apicaller.js"></script>
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/cart.css" />
+	</head>
+
+	<body>
+		<header id="headercomp"></header>
+		<div class="CartContainer">
+			<div class="Header">
+				<h1 class="Heading">Shopping Cart</h1>
+				<!-- remove all elements in local storage -->
+				<div id="all-items-remove">
+					<h5 class="Action">Remove all</h5>
+				</div>
+			</div>
+
+			<div class="cart-items"></div>
+
+			<hr />
+			<div class="checkout">
+				<div class="total">
+					<div>
+						<div class="Subtotal">Sub-Total</div>
+						<div class="items">2 items</div>
+					</div>
+					<div class="total-amount">$6.18</div>
+				</div>
+				<button class="button">Checkout</button>
+			</div>
+		</div>
+		<script type="module" src="./javascript/header.js"></script>
+		<script type="module" src="./javascript/cart/index.js"></script>
+	</body>
+</html>
