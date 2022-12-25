@@ -50,6 +50,8 @@ class shoppingCart extends HTMLElement {
 	// remove all items from cart
 	RemoveAll() {
 		this.products = [];
+		// remove from local storage
+		localStorage.removeItem("products");
 		this.#Render();
 		// refresh page
 		window.location.href = "./cart.html";

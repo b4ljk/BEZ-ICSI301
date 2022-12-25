@@ -12,33 +12,46 @@
 		<script src="./javascript/apicaller.js"></script>
 		<link rel="stylesheet" href="./css/style.css" />
 		<link rel="stylesheet" href="./css/cart.css" />
-		<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+		<!-- <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script> -->
+		<script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
 	</head>
 
 	<body>
 		<header id="headercomp"></header>
-		<div class="CartContainer">
-			<div class="Header">
-				<h1 class="Heading">Shopping Cart</h1>
-				<!-- remove all elements in local storage -->
-				<div id="all-items-remove">
-					<h5 class="Action">Remove all</h5>
+		<div style="display: flex">
+			<div class="CartContainer" style="flex: 4">
+				<div class="Header">
+					<h1 class="Heading">Shopping Cart</h1>
+					<!-- remove all elements in local storage -->
+					<div id="all-items-remove">
+						<h5 class="Action">Remove all</h5>
+					</div>
+				</div>
+
+				<div class="cart-items"></div>
+
+				<hr />
+				<div class="checkout">
+					<div class="total">
+						<div>
+							<div class="Subtotal">Sub-Total</div>
+							<div class="items">2 items</div>
+						</div>
+						<div class="total-amount">$0.00</div>
+					</div>
+					<button id="google-login" class="button" style="margin-bottom: 20px">Checkout with google</button>
 				</div>
 			</div>
-
-			<div class="cart-items"></div>
-
-			<hr />
-			<div class="checkout">
-				<div class="total">
-					<div>
-						<div class="Subtotal">Sub-Total</div>
-						<div class="items">2 items</div>
-					</div>
-					<div class="total-amount">$6.18</div>
+			<div class="CartContainer" style="margin-left: 20px; flex: 2; padding: 10px">
+				<div style="display: flex; align-items: center; justify-content: center">
+					<div id="userimage"></div>
+					<h2 id="username"></h2>
 				</div>
-				<button class="button">Checkout</button>
+				<h2 class="Heading">Successful orders</h2>
+				<div id="compeltedorders"></div>
 			</div>
 		</div>
 		<script type="module" src="./javascript/header.js"></script>
@@ -56,22 +69,110 @@
 			};
 			firebase.initializeApp(firebaseConfig);
 			var db = firebase.firestore();
+			// get user from local storage if exists
+			var user = JSON.parse(localStorage.getItem("user"));
+			if (user) {
+				console.log(user);
+				document.getElementById("username").innerHTML = user.displayName;
+				document.getElementById(
+					"userimage"
+				).innerHTML = `<img src="${user.photoURL}" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px" />`;
+				// get products from firestore where orders are in collection users user id docs cart collection
+				db.collection("users")
+					.doc(user.uid)
+					.collection("cart")
+					.get()
+					.then((querySnapshot) => {
+						querySnapshot.forEach((doc) => {
+							const _data = doc.data();
+							document.getElementById("compeltedorders").innerHTML += `<div class="Cart-Items pad">
+								<div class="image-box">
+									<img src=${_data?.image || ""} height="120px" alt="photo of item" />
+								</div>
+								<div class="about">
+									<h1 class="title">${_data?.nameItem || "Name of item".split(" ").slice(0, 2).join(" ")}</h1>
+									<h3 class="subtitle" style="margin-top:20px">${_data?.description.split(" ").slice(0, 5).join(" ")}</h3>
 
-			// Get a document from the "users" collection
-			var docRef = db.collection("test").doc("test");
-			docRef
-				.get()
-				.then(function (doc) {
-					if (doc.exists) {
-						console.log("Document data:", doc.data());
-					} else {
-						// doc.data() will be undefined in this case
-						console.log("No such document!");
-					}
-				})
-				.catch(function (error) {
-					console.log("Error getting document:", error);
-				});
+								</div>
+								
+								<div class="prices">
+									<div class="amount">${_data?.quantity || "1"}Ш</div>
+								</div>
+							</div>
+							`;
+						});
+					});
+			}
+			document.getElementById("google-login").addEventListener("click", function () {
+				var provider = new firebase.auth.GoogleAuthProvider();
+				firebase.auth().useDeviceLanguage();
+				firebase
+					.auth()
+					.signInWithPopup(provider)
+					.then(async function (result) {
+						// This gives you a Google Access Token. You can use it to access the Google API.
+						var token = result.credential.accessToken;
+						// The signed-in user info.
+						var user = result.user;
+						console.log(user);
+						// save user info to local storage
+						localStorage.setItem("user", JSON.stringify(user));
+						// save user info to firestore
+						await db
+							.collection("users")
+							.doc(user.uid)
+							.set({
+								name: user.displayName,
+								// phone
+								phone: user.phoneNumber,
+								email: user.email,
+								photoURL: user.photoURL,
+								uuid: user.uid,
+							})
+							.then(async function () {
+								// write items in cart to firestore
+								var cartItems = await JSON.parse(localStorage.getItem("products"));
+								// console.log(cartItems);
+								cartItems.forEach(function (item) {
+									db.collection("users")
+										.doc(user.uid)
+										.collection("cart")
+										.doc(item.id)
+										.set({
+											nameItem: item.title || "0 ",
+											description: item.content || "0 ",
+											price: item.price || "0 tugrik",
+											quantity: item.count || "0 ",
+											image: item.image,
+										})
+										.catch(function (error) {
+											console.error("Error writing document: ", error);
+										});
+								});
+							})
+							.catch(function (error) {
+								console.error("Error writing document: ", error);
+							});
+					})
+					.then(function () {
+						// set local storage item to 0
+						if (window.location.href.includes("cart.html")) {
+							const myCart = document.querySelector("cart-component");
+							myCart.RemoveAll();
+						}
+						window.location.reload();
+					})
+					.catch(function (error) {
+						// Handle Errors here.
+						var errorCode = error.code;
+						var errorMessage = error.message;
+						// The email of the user's account used.
+						var email = error.email;
+						// The firebase.auth.AuthCredential type that was used.
+						var credential = error.credential;
+						// ...
+					});
+			});
 		</script>
 	</body>
 </html>
