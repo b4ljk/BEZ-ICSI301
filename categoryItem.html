@@ -78,13 +78,7 @@
           <button class="sizeBtn">Birthday</button>
           <button class="sizeBtn">Seasonal</button>
           <button class="sizeBtn">Wedding </button>
-          <p class="bakery-item-quantity">Item quantity</p>
-          <div class="quantity">
-            <input class="minus-button" onClick="minusValue()" value="-" type="button">
-            <input class="quantity-number" value="1" max="20" size="1" id="number">
-            <input class="plus-button" onClick="plusValue()" value="+" type="button">
-          </div>
-          <script>
+          <!-- <script>
             function minusValue(){
                     var value = parseInt(document.getElementById('number').value, 20);
                     value = isNaN(value) ? 0 : value;
@@ -101,7 +95,7 @@
                     document.getElementById('number').value = value;
                   }
                 }
-          </script>
+          </script> -->
           <p class="date">Pick a date: </p>
           <label for="time"></label>
           <input type="datetime-local" id="pickingtime" name="timeoftheyear" value="DD//MM//YYY">
