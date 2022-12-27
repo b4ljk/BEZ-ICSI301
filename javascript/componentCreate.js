@@ -51,6 +51,24 @@ window.onload = () => {
 				App(data?.record?.[type], "cardBodyId");
 			}
 		});
+	} else if (type == "bread") {
+		get("https://api.jsonbin.io/v3/b/63aa763601a72b59f23a07c8").then((data) => {
+			if (data) {
+				App(data?.record?.[type], "cardBodyId");
+			}
+		});
+	} else if (type == "catering") {
+		get("https://api.jsonbin.io/v3/b/63aa771801a72b59f23a0835").then((data) => {
+			if (data) {
+				App(data?.record?.[type], "cardBodyId");
+			}
+		});
+	} else if (type == "desert") {
+		get("https://api.jsonbin.io/v3/b/63aa77e3dfc68e59d571bd42").then((data) => {
+			if (data) {
+				App(data?.record?.[type], "cardBodyId");
+			}
+		});
 	} else {
 		App(Data, "cardBodyId");
 	}
