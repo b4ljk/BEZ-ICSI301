@@ -18,10 +18,10 @@
 
 	<body>
 		<header id="headercomp"></header>
-    <!-- main html -->
-    <main>
+    <!-- main html container-->
+    <main class="container">
+	<!-- left column  -->
       <div class="item">
-        <!-- slideshow container -->
         <div class="itemgrid">
           <div class="fade">
             <img src="https://cdn.greensoft.mn/cache/images/3/b/e/3/4/3be3476a4fe6de42dd2a17031166de32f9dcf369.jpg" class="slideimg">
@@ -66,9 +66,14 @@
           dots[slideIndex-1].className += " active";
         }
         </script>
+		<!-- right column -->
         <div class="itemgridtwo">
-          <h5>Monbakery</h5>
-          <p class="bakery-item-name">Strawberry Shortcake</p>
+		<!-- product description -->
+		<div class="product-description">
+			<span>Monbakery</span>
+			<h1>Strawberry Shortcake</h1>
+			<p class="bakery-item-description">Item descriptionjvshfhsavachvsqhagdhVASHSVQHvah hadHCSBHhsghjfswhafbdhwb</p>
+		</div>
           <p class="Price">50000 TGK</p>
           <p class="size">Size</p>
           <button class="sizeBtn">6"</button>
@@ -95,12 +100,10 @@
                     document.getElementById('number').value = value;
                   }
                 }
-          </script> -->
-        <p class="bakery-item-description">Item descriptionjvshfhsavachvsqhagdhVASHSVQHvah hadHCSBHhsghjfswhafbdhwb</p>    
+          </script> -->    
         <button class="bakery-item-button" onclick="window.location.href='cart.html'">Add to cart</button>
       </div>
     </div>
-    <h2>Recommendation</h2>
     </div>
   </main>
   <footer>
