@@ -218,7 +218,7 @@ main {
   }
 
 /*! large screen css -----------------------------------------> */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1000px) {
 .mybtn{
     display: none;
 }
@@ -370,7 +370,7 @@ p.site-decription {
 
 
 /*! mobile css --------------------------------------------------> */
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1000px) {
   .card{
     margin-right: 50px;
 }

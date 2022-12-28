@@ -283,7 +283,7 @@ header.hide {
 
 
 /*! large screen css -----------------------------------------> */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1000px) {
   .banner-text{
     position: absolute;
     top: 45vh;
@@ -423,7 +423,7 @@ header a:hover, a:active { text-decoration: none; color:green }
 
 
 /*! mobile css --------------------------------------------------> */
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1000px) {
   .banner-text{
     display: none;
   }
