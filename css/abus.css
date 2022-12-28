@@ -246,7 +246,6 @@ body{
 
 .largeNavbar a{
     text-transform: uppercase;
-    color: var();
     font-family: 'Montserrat', sans-serif;
 
     padding: 0 5px;
@@ -437,7 +436,7 @@ p.site-decription {
     top: 25px;
     left: 25px;
     z-index: 1;
-    -webkit-user-select: none;
+    /* -webkit-user-select: none; */
     user-select: none;
   }
   
@@ -505,7 +504,7 @@ p.site-decription {
     padding: 50px;
     padding-top: 125px;
     background-color: #F5F6FA;
-    -webkit-font-smoothing: antialiased;
+    /* -webkit-font-smoothing: antialiased; */
     transform-origin: 0% 0%;
     transform: translate(-100%, 0);
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
@@ -557,6 +556,6 @@ p.site-decription {
   }
   .up {
     transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
+    /* -webkit-transform: rotate(-135deg); */
   }
 }

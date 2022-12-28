@@ -194,7 +194,7 @@ header.hide {
 }
 .slide-indicator.active:after,
 .slide-indicator:hover:after {
-    background-color: #620c2b;
+    background-color: var(--primary);
 }
 .slide-banner {
     background-color: #000000;
@@ -259,7 +259,7 @@ header.hide {
 }
 .card-div-button{
   display: flex;
-  background-color: #620c2b;
+  background-color: var(--primary);
   padding: 10px;
   border-radius: 8px;
   justify-content: center;
