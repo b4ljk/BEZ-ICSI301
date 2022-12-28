@@ -252,7 +252,7 @@ header.hide {
 /* items inside largenavbar uppercase */
 .largeNavbar a{
     text-transform: uppercase;
-    color: var();
+    /* color: var(); */
     font-family: Prompt,sans-serif;
     padding: 0 5px;
     transition: var(--transition);

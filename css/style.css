@@ -313,7 +313,7 @@ header.hide {
 /* items inside largenavbar uppercase */
 .largeNavbar a{
     text-transform: uppercase;
-    color: var();
+    /* color: var(); */
     font-family: 'Montserrat', sans-serif;
 
     padding: 0 5px;
