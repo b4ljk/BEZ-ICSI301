@@ -6,6 +6,8 @@
 git clone https://github.com/b4ljk/BEZ-ICSI301.git
 ```
 
+### Happy 100th commit 🥳🥳🎉
+
 ```git
 git checkout -b "neree bich"
 ```
