@@ -2,17 +2,17 @@
 <!-- Path: contact.html -->
 <html lang="en">
 	<head>
-		<link rel="shortcut icon" href="./assets/favicon/favicon.ico" type="image/x-icon" >
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
-		<meta charset="UTF-8" >
-		<meta name="description" content="Monbakery is a bakery that sells the best cakes and pastries in town." >
-		<meta name="keywords" content="bakery, cakes, pastries, monbakery" >
-		<meta name="theme-color" content="#ffffff" >
+		<link rel="shortcut icon" href="./assets/favicon/favicon.ico" type="image/x-icon" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="UTF-8" />
+		<meta name="description" content="Monbakery is a bakery that sells the best cakes and pastries in town." />
+		<meta name="keywords" content="bakery, cakes, pastries, monbakery" />
+		<meta name="theme-color" content="#ffffff" />
 		<title>Monbakery | Category</title>
 		<title>Payment</title>
 		<script src="./javascript/apicaller.js"></script>
-		<link rel="stylesheet" href="./css/style.css" >
-		<link rel="stylesheet" href="./css/cart.css" >
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/cart.css" />
 		<!-- <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script> -->
 		<script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
@@ -50,6 +50,7 @@
 				<div style="display: flex; align-items: center; justify-content: center">
 					<div id="userimage"></div>
 					<h2 id="username"></h2>
+					<div id="logout" style="cursor: pointer; display: flex; justify-content: center"></div>
 				</div>
 				<h2 class="Heading">Successful orders</h2>
 				<div id="compeltedorders"></div>
@@ -74,6 +75,9 @@
 			var user = JSON.parse(localStorage.getItem("user"));
 			if (user) {
 				console.log(user);
+				document.getElementById(
+					"logout"
+				).innerHTML = `<img src='data:image/svg+xml;base64,PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPCEtLSBVcGxvYWRlZCB0bzogU1ZHIFJlcG8sIHd3dy5zdmdyZXBvLmNvbSwgVHJhbnNmb3JtZWQgYnk6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPgo8c3ZnIGZpbGw9IiM1ZTM0NWUiIGhlaWdodD0iODAwcHgiIHdpZHRoPSI4MDBweCIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMzg0Ljk3MSAzODQuOTcxIiB4bWw6c3BhY2U9InByZXNlcnZlIiBzdHJva2U9IiM1ZTM0NWUiIHN0cm9rZS13aWR0aD0iMzMuNDkyNDc3Ij4KDTxnIGlkPSJTVkdSZXBvX2JnQ2FycmllciIgc3Ryb2tlLXdpZHRoPSIwIi8+Cg08ZyBpZD0iU1ZHUmVwb19pY29uQ2FycmllciI+IDxnPiA8ZyBpZD0iU2lnbl9PdXQiPiA8cGF0aCBkPSJNMTgwLjQ1NSwzNjAuOTFIMjQuMDYxVjI0LjA2MWgxNTYuMzk0YzYuNjQxLDAsMTIuMDMtNS4zOSwxMi4wMy0xMi4wM3MtNS4zOS0xMi4wMy0xMi4wMy0xMi4wM0gxMi4wMyBDNS4zOSwwLjAwMSwwLDUuMzksMCwxMi4wMzFWMzcyLjk0YzAsNi42NDEsNS4zOSwxMi4wMywxMi4wMywxMi4wM2gxNjguNDI0YzYuNjQxLDAsMTIuMDMtNS4zOSwxMi4wMy0xMi4wMyBDMTkyLjQ4NSwzNjYuMjk5LDE4Ny4wOTUsMzYwLjkxLDE4MC40NTUsMzYwLjkxeiIvPiA8cGF0aCBkPSJNMzgxLjQ4MSwxODQuMDg4bC04My4wMDktODQuMmMtNC43MDQtNC43NTItMTIuMzE5LTQuNzQtMTcuMDExLDBjLTQuNzA0LDQuNzQtNC43MDQsMTIuNDM5LDAsMTcuMTc5bDYyLjU1OCw2My40Nkg5Ni4yNzkgYy02LjY0MSwwLTEyLjAzLDUuNDM4LTEyLjAzLDEyLjE1MWMwLDYuNzEzLDUuMzksMTIuMTUxLDEyLjAzLDEyLjE1MWgyNDcuNzRsLTYyLjU1OCw2My40NmMtNC43MDQsNC43NTItNC43MDQsMTIuNDM5LDAsMTcuMTc5IGM0LjcwNCw0Ljc1MiwxMi4zMTksNC43NTIsMTcuMDExLDBsODIuOTk3LTg0LjJDMzg2LjExMywxOTYuNTg4LDM4Ni4xNjEsMTg4Ljc1NiwzODEuNDgxLDE4NC4wODh6Ii8+IDwvZz4gPGc+IDwvZz4gPGc+IDwvZz4gPGc+IDwvZz4gPGc+IDwvZz4gPGc+IDwvZz4gPGc+IDwvZz4gPC9nPiA8L2c+Cg08L3N2Zz4=' style="width:25px;height:25px;margin-left:15px"/>`;
 				document.getElementById("username").innerHTML = user.displayName;
 				document.getElementById(
 					"userimage"
@@ -172,6 +176,20 @@
 						// The firebase.auth.AuthCredential type that was used.
 						var credential = error.credential;
 						// ...
+					});
+			});
+			// logout
+			document.getElementById("logout").addEventListener("click", function () {
+				firebase
+					.auth()
+					.signOut()
+					.then(function () {
+						// Sign-out successful.
+						localStorage.removeItem("user");
+						window.location.reload();
+					})
+					.catch(function (error) {
+						// An error happened.
 					});
 			});
 		</script>
