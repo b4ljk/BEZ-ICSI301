@@ -22,10 +22,7 @@
     <main class="containerr">
 	<!-- left column  -->
 	<div class="item">
-		<img data-image="seasonal" src="https://www.tljus.com/wp-content/uploads/2022/12/1_BerryMerryChristmas.png" class="slideimg">
-		<img data-image="birthday"src="https://www.tljus.com/wp-content/uploads/2021/05/TripleBerry.jpg" class="slideimg">
-        <img data-image="wedding" src="https://www.tljus.com/wp-content/uploads/2019/12/Vanilla-Chocolate-Heart-Mousse.jpg" class="slideimg">
-        <img data-image="none" class="active" src="https://www.tljus.com/wp-content/uploads/2020/07/Strawberry-Whipped-Cream-Cake.jpg" class="slideimg">
+        <img id="active" src="./assets/none.png" class="slideimg">
     </div>  
 		<!-- right column -->
         <div class="itemgridtwo">
@@ -49,18 +46,24 @@
 				<span class="span">Add product type</span>
 				<div class="type-choose">
 					<div>
-						<button data-image="none" class="sizeBtn" id="none">None</button>
+						<button onclick="dataImage('./assets/none.png')" class="sizeBtn" id="none">None</button>
 					</div>
 					<div>
-						<button data-image="birthday" class="sizeBtn" id="birthday">Birthday</button>
+						<button onclick="dataImage('./assets/birthday.png')" class="sizeBtn" id="birthday">Birthday</button>
 					</div>
 					<div>
-						<button data-image="seasonal" class="sizeBtn" id="seasonal">Seasonal</button>
+						<button onclick="dataImage('./assets/seasonal.png')" class="sizeBtn" id="seasonal">Seasonal</button>
 					</div>
 					<div>
-						<button data-image="wedding" class="sizeBtn" id="wedding">Wedding </button>
+						<button onclick="dataImage('./assets/wedding.png')" class="sizeBtn" id="wedding">Wedding </button>
 					</div>
 				</div>
+				<script>
+					function dataImage(fileName){
+						let img = document.querySelector("#active");
+						img.setAttribute("src",fileName);
+					}
+				</script>
 			</div>
 			<!-- item pricing -->
 			<div class="product-price">
