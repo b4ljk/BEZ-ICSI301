@@ -9,6 +9,7 @@
   --neutral-lt: #fff;
   --primary: #620c2b;
   /* OTHER */
+  --neutral-font:'Prompt', sans-serif;
 }
 
 *{
@@ -124,16 +125,15 @@ main {
     display: flex;
     flex-direction: column;
     margin: 0 50px 0 50px;
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--neutral-font);
   }
   
   /*card iin garchig*/
   .hcard {
     position: sticky;
     height: var(--main-padding);
-    color: var(--main-bg1-color);
-    font-family: 'Lobster', cursive;
-    background-color: var(--main-bg2-color);
+    color: var(--primary);
+    font-family: var(--neutral-font);
     width: 100%;
     align-self: stretch;
     margin-left: 0%;
@@ -142,6 +142,8 @@ main {
 
   .hcard > h3{
     padding-left: 30px;
+    text-align: center;
+    font-size: 30px;
   }
   
   body {
@@ -172,7 +174,8 @@ main {
     font-family: 'Fira Sans', sans-serif;
   }
   .im{
-    margin-right:var(--main-padding);
+    margin-right:40px;
+    margin-left: 40px;
   }
   .im > img{
     display: inline-flex;
